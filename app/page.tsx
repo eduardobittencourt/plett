@@ -1,31 +1,10 @@
-"use client";
-
-import { OrbitControls, useGLTF } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { useRef } from "react";
-
-function Model({ path }: { path: string }) {
-  const { scene } = useGLTF(path, true);
-  const meshRef = useRef(null);
-
-  return <primitive object={scene} ref={meshRef} />;
-}
+import Logo from "@/components/Logo";
 
 export default function HomePage() {
   return (
-    <main className="container mx-auto p-4">
-      <h1>Plett</h1>
-
-      <div className="aspect-square border border-red-400">
-        <Canvas camera={{ position: [0, 0, 100] }}>
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[1, 1, 1]} intensity={0.8} />
-
-          <Model path="/plett.glb" />
-
-          <OrbitControls />
-        </Canvas>
-      </div>
+    <main className="container mx-auto flex h-screen flex-col items-center justify-center gap-4 p-4">
+      <Logo />
+      <h2 className="font-sans">Em breve</h2>
     </main>
   );
 }
