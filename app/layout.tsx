@@ -1,8 +1,10 @@
+import "./globals.css";
+
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Nunito, Quicksand } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import "./globals.css";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Plett",
@@ -26,7 +28,11 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="pt-br">
-      <body className={`${nunito.variable} ${quicksand.variable} antialised`}>
+      <body
+        className={`${nunito.variable} ${quicksand.variable} antialised bg-neutral-light text-neutral-dark font-nunito`}
+      >
+        <Header />
+
         {children}
 
         <SpeedInsights />
