@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito, Quicksand } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "./globals.css";
 
@@ -27,6 +28,8 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
     <html lang="pt-br">
       <body className={`${nunito.variable} ${quicksand.variable} antialised`}>
         {children}
+
+        <SpeedInsights />
       </body>
     </html>
   );
