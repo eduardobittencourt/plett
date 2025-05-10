@@ -29,7 +29,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="pt-br">
       <body
-        className={`${nunito.variable} ${quicksand.variable} antialised bg-neutral-light text-neutral-dark font-nunito`}
+        className={`${nunito.variable} ${quicksand.variable} antialised bg-neutral-sand text-neutral-dark font-nunito`}
       >
         <Header />
 
